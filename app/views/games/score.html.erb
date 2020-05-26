@@ -1,0 +1,8 @@
+<h1>Result</h1>
+<p>Gris was <%= @grid %></p>
+<p>Your word is: <%= @word %></p>
+<p><b><%= @result[:message] %></b></p>
+<p>Your total score is <%= session[:score] %></p>
+<p>You played <%= session[:played] %> games!</p>
+
+<%= link_to "Play a new game", 'new' %>

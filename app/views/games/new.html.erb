@@ -1,0 +1,14 @@
+<h1>New game</h1>
+<% @letters.each do |l| %>
+<span class="letter"><%= l %></span>
+<% end %>
+<form action="/score" method="POST">
+  <input type="text" name="word" placeholder="Type the longest word...">
+  <%# <input type="hidden" name="grid"> %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @letters %>
+  <%= hidden_field_tag :start, @start_time %>
+  <%= hidden_field_tag :session_id, @session_id %>
+  <button type="submit">Play</button>
+</form>
+<p>session score : <%= session[:score] %></p>
